@@ -114,7 +114,7 @@ public class RobotContainer {
                 new JoystickButton(m_driverController, Button.kB.value)
                                 .whenPressed(new PIDstraight(3000, m_robotDrive, 0));
                 new JoystickButton(m_driverController, Button.kRightBumper.value)
-                                .whenPressed(new sonar(m_robotDrive, 5));
+                                .whenPressed(new sonar(m_robotDrive, 7));
                 new JoystickButton(m_driverController, Button.kLeftBumper.value)
                                 .whenPressed(new TurnToAngle(90, m_robotDrive));
 
