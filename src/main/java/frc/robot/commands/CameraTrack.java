@@ -19,6 +19,9 @@ public class CameraTrack extends CommandBase {
         {
           driveSubsystem.arcadeDrive(0, -0.5);
         }
+        else if (yaw > -0.2 && yaw < 0.2){
+          driveSubsystem.arcadeDrive(0, 0);
+        }
         else{
           driveSubsystem.arcadeDrive(0, 0.5);
         }
