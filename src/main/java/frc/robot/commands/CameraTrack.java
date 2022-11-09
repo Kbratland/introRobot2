@@ -7,7 +7,7 @@ import frc.robot.subsystems.DriveSubsystem;
 public class CameraTrack extends CommandBase {
     Camera camera;
     DriveSubsystem driveSubsystem;
-    public void getCamera(Camera camera, DriveSubsystem driveSubsystem) {
+    public CameraTrack(Camera camera, DriveSubsystem driveSubsystem) {
       
     }
     public void initialize(){
