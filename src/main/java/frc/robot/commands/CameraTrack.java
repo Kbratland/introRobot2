@@ -14,7 +14,16 @@ public class CameraTrack extends CommandBase {
 
     }
     public void execute(){
-        camera.getTarget();
-        
+        double yaw = camera.getTargetYaw();
+        if(yaw < 0)
+        {
+          driveSubsystem.arcadeDrive(0, -0.5);
+        }
+        else{
+          driveSubsystem.arcadeDrive(0, 0.5);
+        }
+    }
+    public boolean isFinished(){
+      return false;
     }
 }
