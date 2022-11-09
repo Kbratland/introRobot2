@@ -15,18 +15,24 @@ public class CameraTrack extends CommandBase {
     }
     public void execute(){
         double yaw = camera.getTargetYaw();
-        if(yaw < 0)
-        {
+        //driveSubsystem.arcadeDrive(0, yaw * -1);
+        if(yaw < 0){
           driveSubsystem.arcadeDrive(0, -0.5);
         }
-        else if (yaw > -0.2 && yaw < 0.2){
+        else if (yaw > -0.3 && yaw < 0.3){
           driveSubsystem.arcadeDrive(0, 0);
         }
-        else{
+        else if (yaw > 0){
           driveSubsystem.arcadeDrive(0, 0.5);
         }
+        // else if(yaw == null){
+        // driveSubsystem.arcadeDrive(0, 0);
+        // }
     }
     public boolean isFinished(){
       return false;
+    }
+    public void end (boolean interupted){
+      driveSubsystem.arcadeDrive(0, 0);
     }
 }
