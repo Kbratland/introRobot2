@@ -15,7 +15,9 @@ public class CameraTrack extends CommandBase {
 
     }
     public void execute(){
+
         double yaw = camera.getTargetYaw();
+        System.out.println(yaw);
         //driveSubsystem.arcadeDrive(0, yaw * -1);
         if(yaw < 0){
           driveSubsystem.arcadeDrive(0, -0.5);
