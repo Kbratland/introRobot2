@@ -9,6 +9,7 @@ public class CameraTrack extends CommandBase {
     DriveSubsystem driveSubsystem;
     public CameraTrack(Camera camera, DriveSubsystem driveSubsystem) {
      this.camera = camera; 
+     this.driveSubsystem = driveSubsystem;
     }
     public void initialize(){
 

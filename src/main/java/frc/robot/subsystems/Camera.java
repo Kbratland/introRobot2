@@ -11,6 +11,7 @@ public class Camera extends SubsystemBase{
        var result = photonCamera.getLatestResult();
        if(result.hasTargets()){
         PhotonTrackedTarget target = result.getBestTarget();
+        System.out.println("I have a target " + target);
         return target.getYaw();
        }
        else{
