@@ -9,7 +9,12 @@ public class Camera extends SubsystemBase{
     PhotonCamera photonCamera = new PhotonCamera("MICROSOFT_LifeCam_HD-3000");
    public double getTargetYaw(){
        var result = photonCamera.getLatestResult();
-       PhotonTrackedTarget target = result.getBestTarget();
-       return target.getYaw();
+       if(result.hasTargets()){
+        PhotonTrackedTarget target = result.getBestTarget();
+        return target.getYaw();
+       }
+       else{
+        return (0);
+       }
    }
 }
