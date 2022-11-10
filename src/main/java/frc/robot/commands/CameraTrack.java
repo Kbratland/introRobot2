@@ -30,10 +30,10 @@ public class CameraTrack extends CommandBase {
         // driveSubsystem.arcadeDrive(0, 0);
         // }
     }
-    public boolean isFinished(){
-      return false;
-    }
     public void end (boolean interupted){
       driveSubsystem.arcadeDrive(0, 0);
+    }
+    public boolean isFinished(){
+      return false;
     }
 }
