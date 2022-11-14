@@ -13,12 +13,11 @@ public class Camera extends SubsystemBase{
        if(result.hasTargets()){
         PhotonTrackedTarget target = result.getBestTarget();
         System.out.println("I have a target " + target);
-        
         return target.getYaw();
        }
        else{
            System.out.println("No target");
-        return (0);
+        return (0.4);
        }
    }
 } 
