@@ -123,7 +123,7 @@ public class RobotContainer {
                 new JoystickButton(m_driverController, Button.kRightBumper.value)
                                 .whenPressed(new sonar(m_robotDrive, 7));
                 new JoystickButton(m_driverController, Button.kLeftBumper.value)
-                                .whenpressed(new CameraTrack(m_robotDrive, Duration 500000));
+                                .whenPressed(cameraTrack);
 
         }
 
