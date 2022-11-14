@@ -17,7 +17,7 @@ public class CameraTrack extends CommandBase {
     public void execute(){
         double a = camera.getTargetArea();
         double x = camera.getTargetYaw();
-        System.out.println(x);
+        System.out.println("depth " + a + ", Yaw " + x);
         //driveSubsystem.arcadeDrive(0, yaw * -1);
         if(x < 0){
           driveSubsystem.arcadeDrive(0, -0.25);
