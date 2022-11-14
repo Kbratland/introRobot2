@@ -13,6 +13,9 @@ package frc.robot;
 */
 
 import static edu.wpi.first.wpilibj.XboxController.Button;
+
+import java.time.Duration;
+
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.Constants.OIConstants;
 import frc.robot.commands.CameraTrack;
@@ -120,7 +123,7 @@ public class RobotContainer {
                 new JoystickButton(m_driverController, Button.kRightBumper.value)
                                 .whenPressed(new sonar(m_robotDrive, 7));
                 new JoystickButton(m_driverController, Button.kLeftBumper.value)
-                                .whenHeld(cameraTrack);
+                                .whenpressed(new CameraTrack(m_robotDrive, Duration 500000));
 
         }
 

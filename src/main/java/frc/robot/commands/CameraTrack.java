@@ -15,18 +15,27 @@ public class CameraTrack extends CommandBase {
 
     }
     public void execute(){
-
-        double yaw = camera.getTargetYaw();
-        System.out.println(yaw);
+        double a = camera.getTargetArea();
+        double x = camera.getTargetYaw();
+        System.out.println(x);
         //driveSubsystem.arcadeDrive(0, yaw * -1);
-        if(yaw < 0){
-          driveSubsystem.arcadeDrive(0, -0.5);
+        if(x < 0){
+          driveSubsystem.arcadeDrive(0, -0.25);
         }
-        else if (yaw > -0.3 && yaw < 0.3){
+        else if (x > -0.3 && x < 0.3){
           driveSubsystem.arcadeDrive(0, 0);
         }
-        else if (yaw > 0){
-          driveSubsystem.arcadeDrive(0, 0.5);
+        else if (x > 0){
+          driveSubsystem.arcadeDrive(0, 0.25);
+        }
+        if(a < 5){
+          driveSubsystem.arcadeDrive(0.25, 0);
+        }
+        else if (a > 20 && x < 5){
+          driveSubsystem.arcadeDrive(0, 0);
+        }
+        else if (a > 20){
+          driveSubsystem.arcadeDrive(-0.25, 0);
         }
         // else if(yaw == null){
         // driveSubsystem.arcadeDrive(0, 0);
