@@ -1,6 +1,9 @@
 package frc.robot.subsystems;
 
+import java.util.List;
+
 import org.photonvision.PhotonCamera;
+import org.photonvision.targeting.PhotonPipelineResult;
 import org.photonvision.targeting.PhotonTrackedTarget;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
@@ -10,10 +13,18 @@ public class Camera extends SubsystemBase{
    public double getTargetYaw(){
     //    var result = photonCamera.getLatestResult();
     //    System.out.println("Result is " + result.toString());
+    PhotonPipelineResult result = photonCamera.getLatestResult();
+    System.out.println("after acquiring results");
+    System.out.println(result.hasTargets());
+
        if(photonCamera.getLatestResult().hasTargets()){
-        PhotonTrackedTarget target = photonCamera.getLatestResult().getBestTarget();
-        System.out.println("I have a target " + target);
-        return target.getYaw();
+           System.out.println("I have a target");
+           return 0.0;
+        // PhotonPipelineResult target = photonCamera.getLatestResult();
+        // List<PhotonTrackedTarget> target1 = target.getTargets();
+        // PhotonTrackedTarget myTarget = target1.get(0);
+        // System.out.println("I have a target " + myTarget);
+        // return myTarget.getYaw();
        }
        else{
            System.out.println("No target");
