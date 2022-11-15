@@ -18,13 +18,12 @@ public class Camera extends SubsystemBase{
     System.out.println(result.hasTargets());
 
        if(photonCamera.getLatestResult().hasTargets()){
-           System.out.println("I have a target");
-           return 0.0;
-        // PhotonPipelineResult target = photonCamera.getLatestResult();
-        // List<PhotonTrackedTarget> target1 = target.getTargets();
-        // PhotonTrackedTarget myTarget = target1.get(0);
-        // System.out.println("I have a target " + myTarget);
-        // return myTarget.getYaw();
+        System.out.println("I have a target");
+        PhotonPipelineResult target = photonCamera.getLatestResult();
+        List<PhotonTrackedTarget> target1 = target.getTargets();
+        PhotonTrackedTarget myTarget = target1.get(0);
+        System.out.println("I have a target " + myTarget);
+        return myTarget.getYaw();
        }
        else{
            System.out.println("No target");
