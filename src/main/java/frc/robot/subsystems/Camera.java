@@ -27,7 +27,7 @@ public class Camera extends SubsystemBase{
        }
        else{
            System.out.println("No target");
-        return (0.4);
+        return (0);
        }
    }
 } 
