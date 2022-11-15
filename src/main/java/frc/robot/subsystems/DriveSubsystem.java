@@ -58,10 +58,10 @@ public class DriveSubsystem extends SubsystemBase {
     // result in both sides moving forward. Depending on how your robot's
     // gearbox is constructed, you might have to invert the left side instead.
     m_rightMotors.setInverted(true);
-    LeftMotor1.setNeutralMode(NeutralMode.Brake);
-    LeftMotor2.setNeutralMode(NeutralMode.Brake);
-    RightMotor1.setNeutralMode(NeutralMode.Brake);
-    RightMotor2.setNeutralMode(NeutralMode.Brake);
+    // LeftMotor1.setNeutralMode(NeutralMode.Brake);
+    // LeftMotor2.setNeutralMode(NeutralMode.Brake);
+    // RightMotor1.setNeutralMode(NeutralMode.Brake);
+    // RightMotor2.setNeutralMode(NeutralMode.Brake);
     Ultrasonic.setAutomaticMode(true);
     // m_rightMotors.SetNeutralMode(NeutralMode.Brake);
     // Sets the distance per pulse for the encoders
