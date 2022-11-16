@@ -1,6 +1,5 @@
-
 package frc.robot.commands;
-
+import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Camera;
 import frc.robot.subsystems.DriveSubsystem;
@@ -49,18 +48,18 @@ public class DBmode extends CommandBase {
           //a = (a+5)/10;
           a = (a * -1) + 5;
           a = a/5;
-          if (a < 0.5){
-          a = 0.5;
-          }
+          MathUtil.clamp(a, 0.45, 0.5);
           driveSubsystem.arcadeDrive(a , 0);
         }
         else if (a > 20 && x < 5){
           driveSubsystem.arcadeDrive(0, 0);
         }
         else if (a > 20){
-          a = a/40;
+          //a = a/40;
           // 30 - 20, 1 - 0.5
+          a = (a-20) / 40;
 
+          MathUtil.clamp(a, 0.45, 0.5);
           driveSubsystem.arcadeDrive(-a, 0);
         }
       
