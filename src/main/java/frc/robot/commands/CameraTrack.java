@@ -19,13 +19,13 @@ public class CameraTrack extends CommandBase {
         System.out.println(yaw);
         //driveSubsystem.arcadeDrive(0, yaw * -1);
         if(yaw < 0){
-          driveSubsystem.arcadeDrive(0, -0.55);
+          driveSubsystem.arcadeDrive(0, 0.55);
         }
         else if (yaw > -0.3 && yaw < 0.3){
           driveSubsystem.arcadeDrive(0, 0);
         }
         else if (yaw > 0){
-          driveSubsystem.arcadeDrive(0, 0.55);
+          driveSubsystem.arcadeDrive(0, -0.55);
         }
         // else if(yaw == null){
         // driveSubsystem.arcadeDrive(0, 0);
