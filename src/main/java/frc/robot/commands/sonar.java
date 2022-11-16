@@ -1,4 +1,4 @@
-package frc.robot.commands;
+/*package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DriveSubsystem;
@@ -24,4 +24,4 @@ public class sonar extends CommandBase {
     public boolean isFinished() {
         return mdrive.getRange() <= distance;
     }
-}
+}*/
