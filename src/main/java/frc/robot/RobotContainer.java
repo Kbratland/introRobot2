@@ -14,7 +14,7 @@ package frc.robot;
 
 import static edu.wpi.first.wpilibj.XboxController.Button;
 
-import java.time.Duration;
+//import java.time.Duration;
 
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.Constants.OIConstants;
@@ -24,7 +24,7 @@ import frc.robot.commands.PIDstraight;
 import frc.robot.commands.TImedStraight;
 // import frc.robot.commands.TurnToAngle;
 import frc.robot.commands.deskLoop;
-import frc.robot.commands.sonar;
+//import frc.robot.commands.sonar;
 import frc.robot.subsystems.Camera;
 import frc.robot.subsystems.DriveSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -120,8 +120,8 @@ public class RobotContainer {
                                 .whenPressed(new TImedStraight(m_robotDrive, 10500));
                 new JoystickButton(m_driverController, Button.kB.value)
                                 .whenPressed(new PIDstraight(3000, m_robotDrive, 0));
-                new JoystickButton(m_driverController, Button.kRightBumper.value)
-                                .whenPressed(new sonar(m_robotDrive, 7));
+                //new JoystickButton(m_driverController, Button.kRightBumper.value)
+                                //.whenPressed(new sonar(m_robotDrive, 7));
                 new JoystickButton(m_driverController, Button.kLeftBumper.value)
                                 .whenPressed(cameraTrack);
 

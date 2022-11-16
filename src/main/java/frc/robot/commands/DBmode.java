@@ -1,22 +1,21 @@
+
 package frc.robot.commands;
 
-import edu.wpi.first.math.MathUtil;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.Camera;
 import frc.robot.subsystems.DriveSubsystem;
 
-public class CameraTrack extends CommandBase {
+public class DBmode extends CommandBase {
     Camera camera;
     DriveSubsystem driveSubsystem;
-    public CameraTrack(Camera camera, DriveSubsystem driveSubsystem) {
+    public DBmode(Camera camera, DriveSubsystem driveSubsystem) {
      this.camera = camera; 
      this.driveSubsystem = driveSubsystem;
     }
     public void initialize(){
     }
     public void execute(){
-      if(camera.getTargetYaw() != 0 || camera.getTargetArea() != 0)
-       { double a = camera.getTargetArea();
+        double a = camera.getTargetArea();
         double x = camera.getTargetYaw();
         System.out.println("depth " + a + ", Yaw " + x);
         //driveSubsystem.arcadeDrive(0, yaw * -1);
@@ -50,8 +49,9 @@ public class CameraTrack extends CommandBase {
           //a = (a+5)/10;
           a = (a * -1) + 5;
           a = a/5;
-          a = a * 0.6;
-          MathUtil.clamp(a, 0.45, 0.6);
+          if (a < 0.5){
+          a = 0.5;
+          }
           driveSubsystem.arcadeDrive(a , 0);
         }
         else if (a > 20 && x < 5){
@@ -60,9 +60,9 @@ public class CameraTrack extends CommandBase {
         else if (a > 20){
           a = a/40;
           // 30 - 20, 1 - 0.5
-          MathUtil.clamp(a, 0.45, 0.6);
+
           driveSubsystem.arcadeDrive(-a, 0);
-        }}
+        }
       
         // else if(yaw == null){
         // driveSubsystem.arcadeDrive(0, 0);
