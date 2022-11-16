@@ -15,6 +15,7 @@ package frc.robot;
 import static edu.wpi.first.wpilibj.XboxController.Button;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.Constants.OIConstants;
+import frc.robot.commands.CameraPID;
 import frc.robot.commands.CameraTrack;
 //import frc.robot.commands.GyroTurn;
 import frc.robot.commands.PIDstraight;
@@ -114,7 +115,7 @@ public class RobotContainer {
                 new JoystickButton(m_driverController, Button.kY.value)
                                 .whenPressed(new TImedStraight(m_robotDrive, 3991));
                 new JoystickButton(m_driverController, Button.kX.value)
-                                .whenPressed(new TImedStraight(m_robotDrive, 10500));
+                                .whenPressed(new CameraPID(camera.getTargetYaw(), m_robotDrive));
                 new JoystickButton(m_driverController, Button.kB.value)
                                 .whenPressed(new PIDstraight(3000, m_robotDrive, 0));
                 new JoystickButton(m_driverController, Button.kRightBumper.value)
