@@ -20,6 +20,7 @@ import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.Constants.OIConstants;
 import frc.robot.commands.CameraPID;
 import frc.robot.commands.CameraTrack;
+import frc.robot.commands.DBmode;
 //import frc.robot.commands.GyroTurn;
 import frc.robot.commands.PIDstraight;
 import frc.robot.commands.TImedStraight;
@@ -47,6 +48,7 @@ public class RobotContainer {
         private final DriveSubsystem m_robotDrive = new DriveSubsystem();
         private final Camera camera = new Camera();
         private final CameraTrack cameraTrack = new CameraTrack(camera,m_robotDrive);
+        private final DBmode dBmode = new DBmode(camera, m_robotDrive);
 
         // The driver's controller
         XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
@@ -121,10 +123,10 @@ public class RobotContainer {
                                 .whenPressed(new CameraPID(camera.getTargetYaw(), m_robotDrive));
                 new JoystickButton(m_driverController, Button.kB.value)
                                 .whenPressed(new PIDstraight(3000, m_robotDrive, 0));
-                //new JoystickButton(m_driverController, Button.kRightBumper.value)
-                                //.whenPressed(new sonar(m_robotDrive, 7));
+                new JoystickButton(m_driverController, Button.kRightBumper.value)
+                                .whileHeld(dBmode);
                 new JoystickButton(m_driverController, Button.kLeftBumper.value)
-                                .whenPressed(cameraTrack);
+                                .whileHeld(cameraTrack);
 
         }
 
